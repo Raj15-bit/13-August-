@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Normal Guy — Intelligence Digest — August 13-14, 2026</title>
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#0f141c;--sidebar:#010409;--text:#e6edf3;--body:#c9d1d9;--muted:#8b949e;--border:#30363d;--border2:#21262d;--link:#58a6ff;--up:#3fb950;--down:#f85149;--flat:#d29922;--thbg:#161b22}
+html[data-theme="light"]{--bg:#ffffff;--panel:#f6f8fa;--panel2:#eef1f4;--sidebar:#f6f8fa;--text:#1f2328;--body:#33393f;--muted:#57606a;--border:#d0d7de;--border2:#e2e6ea;--link:#0969da;--up:#1a7f37;--down:#cf222e;--flat:#9a6700;--thbg:#eef1f4}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,sans-serif;line-height:1.75;font-size:15px}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+.sidebar{position:fixed;top:0;left:0;width:272px;height:100vh;background:var(--sidebar);border-right:1px solid var(--border);overflow-y:auto;padding:24px 20px 40px;z-index:100}
+.sb-brand{display:flex;align-items:center;gap:10px;padding:0 0 18px;margin:0 0 16px;border-bottom:1px solid var(--border2)}
+.sb-brand img{width:40px;height:auto}
+.sb-brand .sb-title{font-size:11px;font-weight:700;color:var(--text);letter-spacing:.5px;text-transform:uppercase;line-height:1.3}
+.sb-brand .sb-sub{font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
+.sidebar h3{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin:0 0 14px}
+.sidebar ol{list-style:none;counter-reset:toc}
+.sidebar li{counter-increment:toc;margin:0 0 6px}
+.sidebar li a{display:flex;align-items:baseline;gap:8px;font-size:12.5px;color:var(--body);padding:4px 0;transition:color .15s}
+.sidebar li a:hover{color:var(--link);text-decoration:none}
+.toc-num{font-size:10px;font-weight:700;color:var(--muted);min-width:18px}
+.sidebar .sep{border:none;border-top:1px solid var(--border2);margin:12px 0}
+.main{margin-left:272px;max-width:920px;padding:48px 40px 90px}
+.masthead{display:flex;align-items:center;gap:22px;margin:0 0 16px}
+.masthead h1{margin:0;font-size:32px;font-weight:800;color:var(--text);letter-spacing:-.5px;line-height:1.15}
+.brand-mark{width:94px;height:auto;flex:0 0 auto}
+.edition{margin:6px 0 0;font-size:15.5px;color:var(--text);font-weight:600;letter-spacing:-.1px}
+.subtitle{color:var(--body);font-size:15px;margin:10px 0 28px;line-height:1.7}
+.chip-row{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 36px}
+.chip{background:var(--panel);border:1px solid var(--border);border-radius:6px;padding:5px 12px;font-size:12px;color:var(--body);display:inline-flex;align-items:center;gap:6px}
+.chip .up{color:var(--up);font-weight:700}
+.chip .down{color:var(--down);font-weight:700}
+.chip .flat{color:var(--flat);font-weight:700}
+.section{margin:0 0 8px}
+.section h2{font-size:22px;font-weight:700;color:var(--text);padding:0 0 0 18px;margin:0 0 20px;line-height:1.3}
+.section p,.main p{color:var(--body);margin:0 0 18px;font-size:15px;position:relative;padding-left:20px}
+.section p::before{content:"\25B8";position:absolute;left:0;top:0;color:var(--link);font-weight:700;opacity:.7}
+.box p::before{content:none}
+.box p{padding-left:0;margin:0 0 12px}
+.kick{display:block;color:var(--muted);font-size:13px;margin:-14px 0 20px;padding-left:18px;line-height:1.6}
+.numline{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 26px}
+.numcard{flex:1 1 200px;background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:14px 16px}
+.numcard .nl{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin:0 0 6px}
+.numcard .nv{font-size:22px;font-weight:800}
+.numcard .ns{font-size:11.5px;color:var(--body);margin:4px 0 0}
+.hl{padding:0 4px;border-radius:3px;font-weight:700;background:rgba(88,166,255,.15)}
+.section strong{color:var(--text)}
+.tkr{color:var(--link);font-weight:700}
+.box{background:var(--panel);border-radius:8px;padding:18px 22px;margin:0 0 20px;border:1px solid var(--border)}
+.box .bt{display:block;font-size:10px;text-transform:uppercase;letter-spacing:1px;margin:0 0 8px;font-weight:700}
+.box.warn{border-left:3px solid var(--down)}
+.box.warn .bt{color:var(--down)}
+.box.good{border-left:3px solid var(--up)}
+.box.good .bt{color:var(--up)}
+.box.edge{border-left:3px solid #a371f7;background:linear-gradient(135deg,var(--panel) 0%,rgba(163,113,247,.06) 100%)}
+.box.edge .bt{color:#a371f7}
+.box.energy{border-left:3px solid var(--up);background:linear-gradient(135deg,var(--panel) 0%,rgba(63,185,80,.06) 100%)}
+.box.energy .bt{color:var(--up)}
+.sdiv{border:none;border-top:2px solid var(--border);margin:48px 0 40px;opacity:.6}
+table.stk{width:100%;border-collapse:collapse;font-size:13px;margin:0 0 20px}
+table.stk th{background:var(--thbg);color:var(--text);font-weight:700;text-align:left;padding:10px 12px;border-bottom:2px solid var(--border);font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+table.stk td{padding:9px 12px;border-bottom:1px solid var(--border2);color:var(--body);vertical-align:top}
+table.stk tr:hover{background:var(--panel2)}
+table.stk .grp{background:var(--panel);font-weight:700;color:var(--text);font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+.up-badge{display:inline-block;background:rgba(63,185,80,.12);color:var(--up);font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:4px}
+.down-badge{display:inline-block;background:rgba(248,81,73,.12);color:var(--down);font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:4px}
+.flat-badge{display:inline-block;background:rgba(210,153,34,.12);color:var(--flat);font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:4px}
+.svg-gallery{margin:40px 0;display:flex;flex-direction:column;gap:32px}
+.svg-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:20px;overflow-x:auto}
+.svg-label{font-size:14px;font-weight:600;color:var(--text);margin:0 0 12px}
+.digest-footer{margin:60px 0 0;padding:30px 0 0;border-top:1px solid var(--border);color:var(--muted);font-size:13px;line-height:1.7}
+.digest-footer p{margin:0 0 14px}
+.digest-footer b{color:var(--text)}
+.foot-brand{display:flex;align-items:center;gap:13px;margin:0 0 16px;padding:0 0 14px;border-bottom:1px solid var(--border2)}
+.foot-brand img{width:52px;height:auto}
+@media(max-width:960px){.sidebar{display:none}.main{margin-left:0;padding:24px 18px 60px}}
+@media(max-width:640px){.masthead{gap:14px}.brand-mark{width:66px}.masthead h1{font-size:24px}table.stk{font-size:11px}}
+</style>
+</head>
+<body>
+<button id="themeBtn" onclick="tglTheme()" aria-label="Toggle light/dark" style="position:fixed;top:14px;right:16px;z-index:200;background:var(--panel);border:1px solid var(--border);color:var(--text);border-radius:8px;padding:7px 12px;font-size:12.5px;cursor:pointer">🌗 Light / Dark</button>
+
+<div class="sidebar">
+<div class="sb-brand">
+<img src="data:image/png;base64,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" alt="Normal Guy">
+<div><div class="sb-title">Normal Guy</div><div class="sb-sub">Intelligence Digest</div></div>
+</div>
+<h3>Contents</h3>
+<ol>
+<li><a href="#s1"><span class="toc-num">01</span><span>The shortage everybody was selling into</span></a></li>
+<li><a href="#s2"><span class="toc-num">02</span><span>Who could pass on a cost, and who could not</span></a></li>
+<li><a href="#s3"><span class="toc-num">03</span><span>The machine that makes other machines</span></a></li>
+<li><a href="#s4"><span class="toc-num">04</span><span>India is short of wire, not power</span></a></li>
+<li><a href="#s5"><span class="toc-num">05</span><span>The oil shock is a diesel shock</span></a></li>
+<li><a href="#s6"><span class="toc-num">06</span><span>America's largest bill is interest</span></a></li>
+<li><a href="#s7"><span class="toc-num">07</span><span>A record nobody discretionary bought</span></a></li>
+<li><a href="#s8"><span class="toc-num">08</span><span>Open models caught the closed ones</span></a></li>
+<li><a href="#s9"><span class="toc-num">09</span><span>Buying the lender, not the factory</span></a></li>
+<hr class="sep">
+<li><a href="#svis"><span class="toc-num">&#9670;</span><span>Visual Intelligence</span></a></li>
+<li><a href="#stbl"><span class="toc-num">&#9636;</span><span>Stock &amp; Sector Table</span></a></li>
+</ol>
+</div>
+
+<div class="main">
+
+<div class="masthead">
+<img class="brand-mark" src="data:image/png;base64,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" alt="Normal Guy">
+<div>
+<h1>Intelligence Digest</h1>
+<p class="edition">August 13-14, 2026</p>
+</div>
+</div>
+<p class="subtitle">Almost every company that had a good day was selling into a shortage somebody else created, and almost every company that had a bad one was paying for a shortage it could not pass on. That single split explains India's largest results day of the year, a record diesel margin, and the electricity India generated and then threw away.</p>
+
+<div class="chip-row">
+<div class="chip">S&amp;P 500 <span class="up">above 7,800, a record</span></div>
+<div class="chip">Nifty 50 <span class="flat">24,436</span></div>
+<div class="chip">Gold <span class="up">$4,407/oz</span></div>
+<div class="chip">India CPI July <span class="flat">4.4%</span></div>
+<div class="chip">India exports July <span class="up">$80.14 bn (+13.31%)</span></div>
+<div class="chip">US 30 year auction <span class="down">5.216%, highest since 2001</span></div>
+<div class="chip">Nasdaq futures, institutions <span class="down">&#8722;$21.6 bn in a week</span></div>
+<div class="chip">Open model vs closed <span class="flat">87.9 vs 88.0</span></div>
+</div>
+
+<div class="numline">
+<div class="numcard"><div class="nl">Sansera aerospace order book</div><div class="nv" style="color:var(--up)">&#8377;5,700 Cr</div><div class="ns">up from about &#8377;4,400 Cr on a single semiconductor order, same day</div></div>
+<div class="numcard"><div class="nl">Diesel refining margin</div><div class="nv" style="color:var(--flat)">near $100</div><div class="ns">a record, while crude itself was oversupplied last year</div></div>
+<div class="numcard"><div class="nl">US interest, nine months</div><div class="nv" style="color:var(--down)">$827 bn</div><div class="ns">now above both defence and elderly healthcare spending</div></div>
+<div class="numcard"><div class="nl">Indian clean power thrown away</div><div class="nv" style="color:var(--down)">300 GWh</div><div class="ns">generated in the first quarter and never delivered, for want of wire</div></div>
+</div>
+<div class="section" id="s1">
+<h2 style="border-left:4px solid #58a6ff;padding-left:18px">&#9670; 01. Everything that went up today was selling into a shortage somebody else created</h2>
+<span class="kick">One split runs through the entire day. Sell into a shortage and the quarter was extraordinary. Buy from one and it was not.</span>
+<p><strong>The clearest pattern on the largest Indian results day of the season was not growth, and it was not value. It was position.</strong> Companies that make something the world has run short of filed numbers that look almost unreal. Companies that buy something the world has run short of filed the opposite, on the same day, in the same market, often in the same sector. Once you sort the day that way, almost nothing else needs explaining.</p>
+<p><strong>A shortage is not the same thing as strong demand, and the difference is who gets to set the price.</strong> When demand is strong, a supplier grows alongside its customer and keeps roughly the margin it had. When there is a real shortage, the supplier decides what the customer pays, because the customer has nowhere else to go. That is why profit moved so much further than sales did across today's filings, and why so many margin lines jumped by five or ten points in a single quarter.</p>
+<p><strong>One company shows both sides of this at once.</strong> <span class="tkr">Sansera Engineering</span> said its aerospace and defence order book had grown from about <span class="hl">&#8377;4,400 Cr to &#8377;5,700 Cr</span> in a day, on a single order from one of the world's large semiconductor equipment makers, because very few firms anywhere can machine those parts to that tolerance. The same management then explained that the thing holding the company back is how long it takes for a new precision machine to be delivered. They are short of the exact thing they sell (Section 3).</p>
+<p><strong>The same shape appears far outside India, in places that have nothing to do with each other.</strong> The margin on turning crude oil into diesel hit a record, while the oil itself is not scarce. Indian power stations threw away clean electricity they had already generated, because the wires to move it do not exist. In both cases the physical thing is available and the step in the middle is not, and that middle step is where all the money went.</p>
+<p><strong>What this means for reading the rest of today is simple.</strong> A very good quarter is not proof of a very good business, because a shortage ends when somebody builds more of the missing thing. The useful question on every number below is whether the company is short of something because it built an advantage, or because the world has not caught up yet. The answers are different, and they have different lifespans.</p>
+</div>
+<hr class="sdiv">
+
+<div class="section" id="s2">
+<h2 style="border-left:4px solid #3fb950;padding-left:18px">&#9670; 02. India's biggest results day of the year split cleanly into who could pass on a cost and who could not <span class="up-badge">NEW</span></h2>
+<span class="kick">More than 150 companies filed at once. Sorting them by margin rather than by sales gives a much cleaner answer than sorting them by sector.</span>
+<p><strong>The volume of Indian results today was unusual even for a results season.</strong> More than 150 companies filed in one window, and the breadth of the good ones was wide enough that people who watch this every quarter said they could not remember a day like it. That breadth is the story, because when this many companies beat at once it is usually something happening to costs rather than something happening to demand.</p>
+<p><strong>The winners were mostly companies that sell into a supply gap and were able to keep the whole price increase.</strong> <span class="tkr">Solar Industries India</span> lifted profit to <span class="hl">&#8377;666 Cr from &#8377;353 Cr</span> with its margin widening on the way, on defence explosives that very few firms are cleared to make. <span class="tkr">Kennametal India</span> nearly tripled profit on cutting tools. <span class="tkr">Galaxy Surfactants</span> roughly doubled its operating profit on a sales increase of about a third. The pattern repeats in <span class="tkr">Ipca Laboratories</span>, <span class="tkr">Genus Power Infrastructures</span>, <span class="tkr">Modison</span> and <span class="tkr">Foseco India</span>.</p>
+<p><strong>The losers were companies standing in the middle of a chain, buying at the new price and selling at the old one.</strong> <span class="tkr">Indraprastha Gas</span> is the cleanest case, with revenue up but operating profit down to &#8377;294 Cr from &#8377;511 Cr, because it buys gas at the market price and sells it to households at a price it cannot move quickly. <span class="tkr">Avanti Feeds</span>, <span class="tkr">Bajaj Hindusthan Sugar</span>, <span class="tkr">Kaveri Seed Company</span> and <span class="tkr">Everest Kanto Cylinder</span> all show the same squeeze in different industries.</p>
+<p><strong>The single largest company to file today split in half, and the two halves went opposite ways.</strong> <span class="tkr">Tata Motors</span> commercial vehicles more than doubled profit to about &#8377;2,560 Cr on higher dispatches and a domestic share near 37%, because trucks are being bought by people who need to move goods now. The passenger vehicle arm saw profit after minority interest, which is the profit left once outside shareholders in subsidiaries take their share, fall to about &#8377;775 Cr from &#8377;3,924 Cr. Same group, same country, same day.</p>
+<p><strong>A warning worth carrying into every number below.</strong> Several companies published two versions of themselves today. <span class="tkr">SKF India</span> filed a revenue fall of 54% and a revenue rise of 27% on the identical revenue figure of &#8377;588 Cr, because one is the consolidated business and one is the standalone parent. <span class="tkr">Honasa Consumer</span> put three different growth rates on one announcement. Quoting whichever number is loudest is how a good quarter and a bad quarter get confused.</p>
+<p><strong>Read against the rest of the day, this results table is the domestic version of a global trade.</strong> The Indian companies that did well are, almost without exception, selling shovels into somebody else's construction project, whether that project is a defence order, a power grid or a factory. The ones that did badly are the ones who had to buy from those same shovel sellers. That is the same split that shows up in oil, in electricity and in computing power over the next few sections.</p>
+</div>
+<hr class="sdiv">
+
+<div class="section" id="s3">
+<h2 style="border-left:4px solid #f0883e;padding-left:18px">&#9670; 03. The most valuable machine in India right now is the one that makes other machines <span class="flat-badge">DEVELOPING</span></h2>
+<span class="kick">Precision engineering had the strongest day of any Indian sector, and the limit on all of it is how long a new machine tool takes to arrive.</span>
+<p><strong>A cluster of small Indian engineering firms reported numbers today that do not look like an ordinary quarter.</strong> These are companies that machine metal to tolerances measured in microns, for aircraft engines, defence programmes and semiconductor equipment. Nobody buys from them because they are cheap. They get bought from because the list of firms anywhere that can hold that tolerance is very short, and it is not getting longer quickly.</p>
+<p><strong>The clearest number came from <span class="tkr">Sansera Engineering</span>, which crossed &#8377;1,000 Cr of quarterly revenue for the first time.</strong> Revenue rose about a third and operating profit rose about half, which is the margin signature of a company that is being asked rather than pitching. Its aerospace, defence and semiconductor revenue was roughly three times what it was a year ago, and now makes up about a fifth of the company.</p>
+<p><strong>The order book is where the caution belongs.</strong> The investor presentation put the aerospace and defence backlog at about &#8377;4,437 Cr, and on the call the same day management said it had gone to <span class="hl">&#8377;5,700 Cr</span> on one large semiconductor equipment order that runs out to 2031. Both figures are work promised, not work done. A backlog stretching five years is a good problem and a slow one, and it will show up as revenue long after this quarter is forgotten.</p>
+<p><strong>The constraint is the same for everybody in the group, and management said it plainly.</strong> The thing that sets the timeline in ultra high precision machining is how long it takes the mother machine, the machine tool that makes the parts, to be delivered. Money does not fix that, and neither does an order book. It is the reason a shortage in this business lasts years rather than quarters, and the reason a competitor cannot simply decide to enter.</p>
+<p><strong>The smaller names in the same trade moved even harder.</strong> <span class="tkr">OBSC Perfection</span> grew revenue about 85% with profit up rather more, on an order book above &#8377;1,200 Cr, and its forging line is running at roughly 30% of capacity, so most of that book has somewhere to go. <span class="tkr">Kernex Microsystems</span> printed revenue of about &#8377;504 Cr against &#8377;56 Cr a year ago on train collision avoidance work, though its own order book shrank about 12% in the quarter, which is what happens when you execute faster than you win.</p>
+<p><strong>The read across to the rest of the digest is uncomfortable for the bigger promises.</strong> India spent today announcing aircraft programmes, magnet plants and data centres that all depend on exactly this kind of machining capacity existing by the time they need it (Section 9). The companies that own the machines had a very good day. The programmes that will need them are still tenders.</p>
+</div>
+<hr class="sdiv">
+
+<div class="section" id="s4">
+<h2 style="border-left:4px solid #d29922;padding-left:18px">&#9670; 04. India is not short of electricity, it is short of wire <span class="flat-badge">DEVELOPING</span></h2>
+<span class="kick">Peak demand crossed 270 GW and supply held. The power that was wasted was wasted because it could not be moved.</span>
+<p><strong>India's electricity system passed a real test and failed a quieter one on the same day.</strong> Peak demand crossed <span class="hl">270 GW</span> for the first time, about 70% above where it was a decade ago, and the grid largely held. At the same time the country threw away 300 GWh of clean electricity in the first quarter of this year because there was no way to move it from where it was made to where it was wanted.</p>
+<p><strong>That second number is the one that matters, because it is a different kind of problem.</strong> Building more generation is now the easy part in India, and it is happening fast. Building the lines to carry it is slow, contested and unglamorous, and until those lines exist every new solar farm partly competes with the ones already built for the same limited path to a customer.</p>
+<p><strong>The fix that is actually being funded is the cheap one.</strong> <span class="tkr">Power Grid Corporation of India</span> approved about &#8377;857 Cr to restring two existing 400 kV lines in Tamil Nadu with better wire, which roughly doubles what those lines can carry without building a single new tower. It takes around two years instead of the five to fifteen a new line needs, and there is no land to acquire. It is also the least visible kind of infrastructure spending there is.</p>
+<p><strong>The equipment makers are describing the same shortage from the other end.</strong> One transmission tower maker expects bids worth roughly &#8377;90,000 Cr to &#8377;1 lakh crore in the Indian transmission market this financial year. A power equipment maker described a severe shortage of gas turbines, gas engines, transformers and generators. Those are order books forming, not revenue, and they are the reason <span class="tkr">Genus Power Infrastructures</span> and <span class="tkr">GE Power India</span> both printed strong quarters today.</p>
+<p><strong>The most useful thing anybody said about power storage today was a warning about its economics.</strong> <span class="tkr">Amara Raja Energy and Mobility</span> is spending roughly &#8377;1,300 Cr of this year's capital on new energy, largely a battery storage plant, and its own management guided operating margins on that business of only around 5% to 7%, perhaps 7% to 8% at best, because everybody in India will be competing with imports rather than with each other. A manufacturer talking down its own incentive scheme is worth more than a forecast.</p>
+<p><strong>This is where India's power story and the global compute story meet.</strong> The same physical bottleneck, moving electricity to a specific place at a specific time, is what is now rationing artificial intelligence in the United States, where roughly 72% of the power requested for data centres is not expected to ever be delivered. India is discovering the constraint at 270 GW of ordinary demand. America is discovering it with a queue of buyers who can pay almost anything.</p>
+</div>
+<hr class="sdiv">
+
+<div class="section" id="s5">
+<h2 style="border-left:4px solid #f85149;padding-left:18px">&#9670; 05. The oil shock is showing up in diesel, not in crude <span class="flat-badge">DEVELOPING</span></h2>
+<span class="kick">The margin on turning oil into diesel hit a record while the oil itself is not scarce. That gap is a refining problem wearing an oil crisis costume.</span>
+<p><strong>The most important energy price today was not the price of oil.</strong> It was the gap between what a barrel of crude costs and what the diesel made from it sells for, which reached a record near <span class="hl">$100 a barrel</span>. That gap is pure refining margin, and it widens when the world has plenty of crude and not enough working capacity to turn it into fuel.</p>
+<p><strong>The reason this matters is that the two problems have completely different fixes.</strong> If crude were scarce, producers could pump more and the price would settle. If refining is the bottleneck, pumping more does nothing at all, and the cost lands on everybody who moves goods, farms, or runs a generator. Diesel is the fuel of physical activity, so a record diesel margin is a tax on every business that ships something.</p>
+<p><strong>The demand data quietly contradicts the crisis framing.</strong> The main global energy agency revised last year's oil consumption up to about 104.8 million barrels a day, and revised supply to roughly 106.3 million, meaning the world was oversupplied with crude even while the headlines were about a strait being closed. Its new forecast for next year is now higher than the peak level it predicted a year ago for the end of this decade.</p>
+<p><strong>What actually happened around the Strait of Hormuz remains genuinely unclear, and that is worth saying plainly.</strong> American officials have described flows returning to roughly normal, tanker tracking data does not support that, and Iranian state media says no ship transits without approval. Three accounts, one waterway, and no way to reconcile them from outside. The refining margin is the observable fact, and it is behaving as though the disruption is real and ongoing.</p>
+<p><strong>Several separate physical accidents landed in the same window and none of them were market events.</strong> A fatal explosion hit a fuel trading site in Rotterdam, a blast hit an Italian munitions plant central to Europe's ammunition supply, and a strike on a Russian Black Sea port shut grain terminals and pushed wheat up. Any one of these is a news item. Together they describe a system with no slack in it.</p>
+<p><strong>The link back to the Indian results is direct.</strong> Every company in Section 2 that could not pass on a cost is, one or two steps back, paying for this diesel margin, whether through freight, packaging or power. The Indian refiners and explosives makers sit on the other side of it. A record refining spread is not an oil story, it is a redistribution from everybody who moves things to the small number of people who process them.</p>
+</div>
+<hr class="sdiv">
+
+<div class="section" id="s6">
+<h2 style="border-left:4px solid #f85149;padding-left:18px">&#9670; 06. America's largest spending line is now the interest on what it already borrowed <span class="up-badge">NEW</span></h2>
+<span class="kick">Interest has passed both defence and Medicare. The thirty year bond was sold at the highest yield since 2001.</span>
+<p><strong>The United States government now spends more on interest than on its military or on healthcare for the elderly.</strong> Interest cost <span class="hl">$827 bn</span> in the first nine months of this fiscal year, which annualises to roughly $1.38 trillion, or about 4.2% of the whole economy. That share is the highest since 1997, and five years ago it was little more than half of it.</p>
+<p><strong>The reason this compounds rather than just growing is that old cheap debt keeps maturing into new expensive debt.</strong> The Treasury rolls over around $6 trillion every three months, so each quarter a large slice of borrowing from the low rate years gets replaced at today's rates. Nothing has to go wrong for the number to keep climbing. It climbs simply because time passes.</p>
+<p><strong>The bond market made that point in the clearest way available today.</strong> Thirty year debt was sold at a yield of 5.216%, the highest at auction since 2001, and the ten year sold at the highest since 2007. These are not panic levels, and there was no failed auction. They are the price the government now has to pay to find buyers, and that price is being set higher each time it asks.</p>
+<p><strong>July's monthly numbers show how much of the spending is now borrowed rather than earned.</strong> The deficit for the single month was about $432 bn, the largest July on record, and roughly 56 cents of every dollar the government spent was borrowed. Total debt outstanding sits just under $40 trillion, a threshold it will cross within days.</p>
+<p><strong>Who is buying is changing in a way that matters more than the level.</strong> Foreign central banks and sovereign funds have stepped back, and their place is increasingly taken by hedge funds borrowing heavily against short term money markets to hold Treasuries. That works while funding is cheap and calm. It is a very different buyer from a central bank that holds a bond because it wants the dollars, and it behaves very differently when something goes wrong.</p>
+<p><strong>This sits underneath every equity number in the next section.</strong> A stock market at a record while the risk free rate is being auctioned at a twenty five year high means investors are being paid less to take risk than at almost any point in living memory. That is not an argument that anything is about to break. It is the reason the record itself is worth less than it looks.</p>
+</div>
+<hr class="sdiv">
+
+<div class="section" id="s7">
+<h2 style="border-left:4px solid #a371f7;padding-left:18px">&#9670; 07. A record American stock market was bought by almost everyone except the people paid to manage money <span class="up-badge">NEW</span></h2>
+<span class="kick">The index closed at an all time high in the same week institutions sold the largest amount of technology futures ever recorded.</span>
+<p><strong>The main American index closed above 7,800 for the first time, and the money behind that move came from an unusual place.</strong> In the week to early August, institutions sold a record <span class="hl">$21.6 bn</span> of Nasdaq futures, with short positions making up nearly three quarters of it. Combined institutional positioning turned negative for the first time since May last year, having been strongly positive as recently as October.</p>
+<p><strong>Somebody else absorbed all of that, and it is fairly clear who.</strong> Company buybacks are running above a trillion dollars, individual investors have returned, and rule based funds that buy automatically when volatility falls have been rebuilding. None of those three buyers is making a judgement about value. They are all buying because a formula, a board authorisation or a habit says to.</p>
+<p><strong>The most striking detail of the day is how much of the market is now leveraged bets rather than ownership.</strong> Leveraged exchange traded funds are about 1% of the global fund industry by assets and a record 16% of daily trading value. Their average daily volume has tripled since January. Artificial intelligence names are a record 58% of long leveraged exposure, up from 26% four years ago, and memory chip makers alone are almost half of the single stock leveraged trade.</p>
+<p><strong>The inflation print that triggered the rally deserves a second look.</strong> Producer prices were flat month on month, the first flat reading in over a year, which markets read as the all clear. The single most inflationary component within it was portfolio management fees, which rise when the stock market rises. The measure went cold partly because assets went up, which is a circular kind of comfort.</p>
+<p><strong>One stock carried an implausible share of the move.</strong> <span class="tkr">SpaceX</span> rose about 35% in five sessions after its first share lockup expired, adding roughly half a trillion dollars of market value, on the reasoning that the shares released did not crush the price. The company is now being valued largely as a computing business, on a plan to add six to ten gigawatts of data centres in a single year, which is a promise about electricity as much as about rockets (Section 4).</p>
+<p><strong>The honest summary is that the record is real and the conviction behind it is not.</strong> Prices are set by whoever trades last, not by whoever believes most, and today the last trades came from automatic buyers while the discretionary money was going the other way. That is a market that can keep rising and also has very little underneath it if the automatic bid pauses.</p>
+</div>
+<hr class="sdiv">
+
+<div class="section" id="s8">
+<h2 style="border-left:4px solid #a371f7;padding-left:18px">&#9670; 08. The best open artificial intelligence model is now within a rounding error of the best closed one, at a fraction of the price <span class="up-badge">NEW</span></h2>
+<span class="kick">A Chinese lab shipped a model that scores 87.9 where the leading closed model scores 88.0, and gave away the software around it.</span>
+<p><strong>The gap between the best model anybody can download and the best model anybody can rent effectively closed today.</strong> On a widely used test of whether a model can complete real multi step computer tasks, the newly released open model scored <span class="hl">87.9 against 88.0</span> for the leading closed frontier model. One tenth of a point is not a difference, it is a tie.</p>
+<p><strong>Price is where the two are still nothing like each other.</strong> Depending on how it is measured the open model runs somewhere between roughly 13 and 17 times cheaper per unit of work than its closest open rival, and further below the closed frontier again. The same lab also released the software harness that drives the model as an open licence, which means the surrounding tooling is free as well.</p>
+<p><strong>The quality caveat is real and is being skipped in most retellings.</strong> On a security benchmark the model found 87.5% of the known flaws it was asked to find, ahead of the closed leaders. Only about two thirds of the vulnerabilities it reported were valid, against roughly 86% for the best closed model. It is better at finding things and much worse at knowing when it is wrong, which is a very different product for anything serious.</p>
+<p><strong>Prices are not uniformly falling, and that undercuts the simple story.</strong> The same lab has raised its prices four separate times, while closed frontier models have been getting cheaper. If that continues, the comfortable assumption that open models are permanently the cheap option, and that the enormous funding commitments behind closed labs are safe because prices hold, is the thing that gets tested.</p>
+<p><strong>The money around all of this kept moving at a scale detached from revenue.</strong> A data platform company closed a $5 bn round at a $190 bn valuation, one leading American lab is in talks to buy a video model startup for around $6 bn, and its investors expect a listing later this year that would be the largest ever. None of those numbers are earnings. They are bets on where the earnings go.</p>
+<p><strong>The connection to the physical sections above is the whole point.</strong> If frontier level intelligence costs a fraction of what it did, the scarce input stops being the model and becomes the electricity and the buildings to run it, which is exactly the constraint India is hitting at 270 GW and America is hitting in its interconnection queue. Cheap intelligence makes power expensive.</p>
+</div>
+<hr class="sdiv">
+
+<div class="section" id="s9">
+<h2 style="border-left:4px solid #58a6ff;padding-left:18px">&#9670; 09. The most interesting Indian deals today were about who owns the lender, not who builds the factory <span class="up-badge">NEW</span></h2>
+<span class="kick">Foreign money is buying its way into Indian credit at size, while the industrial announcements remain tenders and bids.</span>
+<p><strong>The largest Indian transaction of the day was a foreign bank buying half of a lender that barely existed three years ago.</strong> <span class="tkr">Bank of America</span> agreed to put up to about <span class="hl">&#8377;18,268 Cr</span> into <span class="tkr">Jio Credit</span>, roughly &#8377;6,613 Cr upfront for 26.5% and warrants taking it towards 49.9%, subject to regulatory approval. The lender's loan book has grown about 2.6 times in a year and its profit more than doubled.</p>
+<p><strong>It is the fourth or fifth deal of its kind in a short space of time, which makes it a pattern rather than an event.</strong> A Gulf bank has put money into one Indian bank, an American private equity firm into another, a Japanese bank into a large finance company, and a sovereign fund into a housing lender. Foreign institutions are not buying Indian factories at this scale. They are buying the balance sheets that lend to them.</p>
+<p><strong>A much stranger deal happened at the other end of the market.</strong> A large private building materials group is arranging to reach the stock market through <span class="tkr">Shalimar Paints</span>, a small loss making paint company, using new shares and convertible instruments worth roughly &#8377;10,500 Cr against a company that reported quarterly revenue of &#8377;138 Cr and a loss. That is a listing achieved by absorption rather than by public offer, and it puts several well known investors onto a paint company's share register.</p>
+<p><strong>The index changes will move more money than either deal.</strong> A major global index provider added <span class="tkr">Adani Energy Solutions</span>, <span class="tkr">Laurus Labs</span>, <span class="tkr">Lenskart Solutions</span> and the parent of a large broking platform to one of its India indices, with a separate quarterly review adding fourteen names including <span class="tkr">Astral</span>, <span class="tkr">Ather Energy</span>, <span class="tkr">Dalmia Bharat</span> and <span class="tkr">Urban Company</span> and removing nineteen others. Passive funds have to buy and sell those names regardless of what they think of them.</p>
+<p><strong>The industrial announcements, by contrast, were almost all still at the paper stage.</strong> India invited bids for sixty military transport aircraft worth around &#8377;1 lakh crore, opened a rare earth magnet scheme that drew fifteen bids, and put &#8377;10,000 Cr behind domestic shipping container manufacturing. Selection on the aircraft alone is expected to take more than two years. The one industrial item that is real is an order for a large computing cluster in Chennai, and even its value is reported in a range rather than confirmed.</p>
+<p><strong>Set against Section 3, the split is clear and slightly uncomfortable.</strong> The money that arrived today went to lending and to index membership, both of which can be deployed immediately. The money that was announced for machines, aircraft and magnets goes to things that need the precision manufacturing capacity that is already fully booked. The financial system is moving considerably faster than the physical one.</p>
+</div>
+<hr class="sdiv">
+
+<div class="section" id="svis">
+<h2 style="border-left:4px solid #a371f7;padding-left:18px">&#9670; Visual Intelligence</h2>
+<span class="kick">Map 1 sorts everything that moved today into the shortage that caused it. Map 2 follows those shortages down the chain until they land on one Indian company.</span>
+<p>Both maps carry the same argument from different directions. The first one groups the day by which physical thing ran out, because the sector labels hide the pattern and the shortages reveal it. The second one takes the three largest of those shortages and traces them step by step into India, ending at a single company where the whole thesis is visible at once.</p>
+
+<div class="svg-gallery">
+<div class="svg-card">
+<div class="svg-label">Map 1 &#183; Six Shortages, One Day</div>
+<svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
+<style>
+.ti{font:bold 16px system-ui;fill:currentColor}
+.su{font:bold 13px system-ui;fill:currentColor}
+.lf{font:12px system-ui;fill:currentColor;opacity:.85}
+.br{rx:8;ry:8;stroke:currentColor;stroke-width:1.5;fill:var(--panel);opacity:.95}
+.cn{stroke:currentColor;stroke-width:1.2;opacity:.4}
+</style>
+<rect class="br" x="420" y="240" width="360" height="80" style="stroke-width:2.5;opacity:1"/>
+<text class="ti" x="600" y="272" text-anchor="middle">PAID FOR THE MISSING STEP</text>
+<text class="lf" x="600" y="298" text-anchor="middle">not the raw material, the thing in between</text>
+
+<line class="cn" x1="420" y1="280" x2="120" y2="120"/>
+<rect class="br" x="20" y="60" width="210" height="50" style="stroke:#f0883e"/>
+<text class="su" x="125" y="85" text-anchor="middle" style="fill:#f0883e">MACHINE TOOLS</text>
+<text class="lf" x="125" y="105" text-anchor="middle">micron tolerance capacity</text>
+<text class="lf" x="30" y="140">&#8226; Sansera book 4,400 to 5,700 Cr</text>
+<text class="lf" x="30" y="158">&#8226; OBSC order book 1,200 Cr</text>
+<text class="lf" x="30" y="176">&#8226; forging line only 30% used</text>
+<text class="lf" x="30" y="194">&#8226; limit is machine delivery time</text>
+
+<line class="cn" x1="600" y1="240" x2="600" y2="60"/>
+<rect class="br" x="460" y="10" width="280" height="50" style="stroke:#d29922"/>
+<text class="su" x="600" y="35" text-anchor="middle" style="fill:#d29922">REFINING CAPACITY</text>
+<text class="lf" x="600" y="53" text-anchor="middle">crude is available, diesel is not</text>
+<text class="lf" x="470" y="80">&#8226; diesel crack record near $100</text>
+<text class="lf" x="470" y="98">&#8226; 2025 crude supply 106.3 mb/d</text>
+<text class="lf" x="470" y="116">&#8226; 2025 demand 104.8 mb/d, oversupplied</text>
+<text class="lf" x="470" y="134">&#8226; Hormuz flow claims unreconciled</text>
+
+<line class="cn" x1="780" y1="280" x2="1060" y2="120"/>
+<rect class="br" x="950" y="60" width="220" height="50" style="stroke:#3fb950"/>
+<text class="su" x="1060" y="85" text-anchor="middle" style="fill:#3fb950">TRANSMISSION WIRE</text>
+<text class="lf" x="1060" y="103" text-anchor="middle">power made, not moved</text>
+<text class="lf" x="960" y="140">&#8226; peak demand crossed 270 GW</text>
+<text class="lf" x="960" y="158">&#8226; 300 GWh clean power curtailed</text>
+<text class="lf" x="960" y="176">&#8226; 857 Cr reconductoring approved</text>
+<text class="lf" x="960" y="194">&#8226; 90,000 Cr of bids expected</text>
+
+<line class="cn" x1="420" y1="310" x2="120" y2="420"/>
+<rect class="br" x="20" y="380" width="230" height="50" style="stroke:#58a6ff"/>
+<text class="su" x="135" y="405" text-anchor="middle" style="fill:#58a6ff">BALANCE SHEET</text>
+<text class="lf" x="135" y="423" text-anchor="middle">who can lend at scale</text>
+<text class="lf" x="30" y="458">&#8226; BofA up to 18,268 Cr into Jio Credit</text>
+<text class="lf" x="30" y="476">&#8226; 49.9% target, 6,613 Cr upfront</text>
+<text class="lf" x="30" y="494">&#8226; fifth foreign deal of its kind</text>
+<text class="lf" x="30" y="512">&#8226; Shalimar route worth 10,500 Cr</text>
+
+<line class="cn" x1="600" y1="320" x2="600" y2="430"/>
+<rect class="br" x="460" y="420" width="280" height="50" style="stroke:#f85149"/>
+<text class="su" x="600" y="445" text-anchor="middle" style="fill:#f85149">SOMEONE TO LEND TO THE US</text>
+<text class="lf" x="600" y="463" text-anchor="middle">the buyer of last resort left</text>
+<text class="lf" x="470" y="495">&#8226; interest 827 bn in nine months</text>
+<text class="lf" x="470" y="513">&#8226; 30 year sold at 5.216%</text>
+<text class="lf" x="470" y="531">&#8226; July deficit 432 bn, a record</text>
+<text class="lf" x="470" y="549">&#8226; 6 trn rolled every three months</text>
+
+<line class="cn" x1="780" y1="310" x2="1060" y2="420"/>
+<rect class="br" x="940" y="380" width="240" height="50" style="stroke:#a371f7"/>
+<text class="su" x="1060" y="405" text-anchor="middle" style="fill:#a371f7">NOT INTELLIGENCE</text>
+<text class="lf" x="1060" y="423" text-anchor="middle">the one thing that got cheap</text>
+<text class="lf" x="950" y="458">&#8226; open model 87.9 vs closed 88.0</text>
+<text class="lf" x="950" y="476">&#8226; roughly 13 to 17x cheaper</text>
+<text class="lf" x="950" y="494">&#8226; harness given away, open licence</text>
+<text class="lf" x="950" y="512">&#8226; so the cost moves to power</text>
+</svg>
+</div>
+
+<div class="svg-card">
+<div class="svg-label">Map 2 &#183; How Three Shortages Land On One Indian Company</div>
+<svg viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
+<style>
+.bx{rx:10;ry:10;stroke:currentColor;stroke-width:1.5;fill:var(--panel)}
+.tx{font:bold 13px system-ui;fill:currentColor;text-anchor:middle}
+.sm{font:11px system-ui;fill:currentColor;text-anchor:middle;opacity:.8}
+.ar{stroke:currentColor;stroke-width:2;opacity:.5;marker-end:url(#ah7)}
+.dh{stroke:currentColor;stroke-width:2;opacity:.4;stroke-dasharray:6 5;marker-end:url(#ah7)}
+</style>
+<defs><marker id="ah7" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="6" orient="auto">
+<polygon points="0 0,10 3.5,0 7" fill="currentColor" opacity=".5"/></marker></defs>
+
+<rect class="bx" x="50" y="30" width="200" height="60" style="stroke:#a371f7"/>
+<text class="tx" x="150" y="55" style="fill:#a371f7">CHEAP INTELLIGENCE</text>
+<text class="sm" x="150" y="75">open model at 87.9 of 88.0</text>
+
+<rect class="bx" x="320" y="30" width="200" height="60" style="stroke:#d29922"/>
+<text class="tx" x="420" y="55" style="fill:#d29922">RECORD DIESEL MARGIN</text>
+<text class="sm" x="420" y="75">crack spread near $100</text>
+
+<rect class="bx" x="590" y="30" width="200" height="60" style="stroke:#f85149"/>
+<text class="tx" x="690" y="55" style="fill:#f85149">DEARER MONEY</text>
+<text class="sm" x="690" y="75">30 year at 5.216%</text>
+
+<line class="ar" x1="150" y1="90" x2="150" y2="155"/>
+<line class="ar" x1="420" y1="90" x2="420" y2="155"/>
+<line class="ar" x1="690" y1="90" x2="690" y2="155"/>
+
+<rect class="bx" x="50" y="160" width="200" height="60"/>
+<text class="tx" x="150" y="185">POWER BECOMES SCARCE</text>
+<text class="sm" x="150" y="205">72% of US requests undelivered</text>
+
+<rect class="bx" x="320" y="160" width="200" height="60"/>
+<text class="tx" x="420" y="185">MOVING GOODS COSTS MORE</text>
+<text class="sm" x="420" y="205">freight into every input</text>
+
+<rect class="bx" x="590" y="160" width="200" height="60"/>
+<text class="tx" x="690" y="185">LONG PROJECTS GET HARDER</text>
+<text class="sm" x="690" y="205">only short paybacks funded</text>
+
+<line class="ar" x1="150" y1="220" x2="380" y2="280"/>
+<line class="ar" x1="420" y1="220" x2="420" y2="280"/>
+<line class="ar" x1="690" y1="220" x2="460" y2="280"/>
+
+<rect class="bx" x="280" y="285" width="280" height="60" style="stroke:#3fb950"/>
+<text class="tx" x="420" y="310" style="fill:#3fb950">INDIA CONVERGENCE</text>
+<text class="sm" x="420" y="330">pay for capacity that already exists</text>
+
+<rect class="bx" x="880" y="160" width="260" height="60" style="stroke:#58a6ff"/>
+<text class="tx" x="1010" y="182" style="fill:#58a6ff">SIDE THREAD</text>
+<text class="sm" x="1010" y="200">300 GWh clean power curtailed</text>
+<text class="sm" x="1010" y="215">857 Cr of new wire approved</text>
+<line class="dh" x1="880" y1="220" x2="570" y2="300"/>
+
+<line class="ar" x1="350" y1="345" x2="200" y2="400"/>
+<line class="ar" x1="490" y1="345" x2="640" y2="400"/>
+
+<rect class="bx" x="60" y="405" width="300" height="80" style="stroke:#3fb950"/>
+<text class="tx" x="210" y="428" style="fill:#3fb950">SANSERA, THE WORKED EXAMPLE</text>
+<text class="sm" x="210" y="448">book 4,400 to 5,700 Cr in one day</text>
+<text class="sm" x="210" y="464">first 1,000 Cr quarter, margin wider</text>
+<text class="sm" x="210" y="480">and limited by its own machine queue</text>
+
+<rect class="bx" x="500" y="405" width="300" height="80" style="stroke:#f85149"/>
+<text class="tx" x="650" y="428" style="fill:#f85149">PAYING THE BILL</text>
+<text class="sm" x="650" y="448">Indraprastha Gas margin 5.83 from 11.80</text>
+<text class="sm" x="650" y="464">Tata Motors PV profit 775 from 3,924 Cr</text>
+<text class="sm" x="650" y="480">Avanti Feeds, Bajaj Hindusthan Sugar</text>
+</svg>
+</div>
+</div>
+
+<p>Both maps end in the same place. Whatever ran short today was never the raw material, it was the step that turns the raw material into something usable, and whoever owned that step collected the money. That is true of crude and diesel, of generated power and delivered power, and of a metal billet and a machined aerospace part.</p>
+
+<div class="box edge"><span class="bt">THE EDGE</span>
+<p>The thing nobody said out loud today is that <span class="tkr">Sansera</span> is simultaneously the best example of the shortage trade and the clearest evidence of its ceiling. Its order book jumped by about &#8377;1,300 Cr in a day because almost nobody can do the work, and its own management said the binding limit is how long a new precision machine takes to arrive. That means the order book can grow faster than the company can ever convert it, which looks like enormous growth in a backlog slide and like a slowly rising revenue line in the accounts.</p>
+<p>Applied more widely, this is the reason the shortage trade is safer than it looks and slower than it is priced. The barrier that lets these companies charge more is the same barrier that stops them growing quickly, and it is made of physical equipment with multi year lead times. A competitor cannot arrive next quarter, and neither can the revenue.</p>
+</div>
+
+<div class="box"><span class="bt">SO WHAT FOR A NORMAL READER</span>
+<p>If you hold Indian small and mid cap industrial names, the number worth checking this quarter is not sales growth, it is whether the operating margin widened at the same time. A company growing sales while its margin shrinks is passing money to somebody upstream, and today produced a lot of both kinds.</p>
+<p>If you are watching the artificial intelligence story, the thing that changed today is that the model stopped being the expensive part. Attention is worth moving to electricity, transmission and land, because that is where the constraint now sits, in India and in the United States alike.</p>
+<p>If you are simply trying to read results season, treat any company that published two different versions of the same quarter as needing a second look rather than a quick conclusion. Several did today, and in more than one case the two versions pointed in opposite directions.</p>
+</div>
+</div>
+<hr class="sdiv">
+
+<div class="section" id="stbl">
+<h2 style="border-left:4px solid #d29922;padding-left:18px">&#9670; Stock &amp; Sector Table</h2>
+<span class="kick">Every company named above, plus everything that filed or was announced in the window. Quarter on quarter figures are Q1FY27 against Q1FY26 unless stated.</span>
+<table class="stk">
+<thead><tr><th>Company</th><th>What happened</th><th>Numbers</th><th>Read</th></tr></thead>
+<tbody>
+<tr class="grp"><td colspan="4">Precision engineering, aerospace and defence</td></tr>
+<tr><td><span class="tkr">Sansera Engineering</span></td><td>First &#8377;1,000 Cr quarter, ADS book restated upward on call</td><td>Rev &#8377;1,021 Cr from &#8377;768 Cr, EBITDA &#8377;196 Cr from &#8377;132 Cr, book &#8377;4,437 to &#8377;5,700 Cr</td><td>Strongest print of the group, backlog runs to 2031</td></tr>
+<tr><td><span class="tkr">OBSC Perfection</span></td><td>Order book above &#8377;1,200 Cr, forging line lightly used</td><td>Rev &#8377;77 Cr from &#8377;42 Cr, PAT &#8377;9 Cr, margin about 18.2%</td><td>Capacity headroom is the differentiator</td></tr>
+<tr><td><span class="tkr">Kernex Microsystems</span></td><td>Kavach execution surge, book shrank as it delivered</td><td>Rev &#8377;504 Cr from &#8377;56 Cr, PAT &#8377;110 Cr, book &#8377;3,641 Cr from &#8377;4,150 Cr</td><td>Execution ahead of order intake</td></tr>
+<tr><td><span class="tkr">Solar Industries India</span></td><td>Defence explosives drove margin expansion</td><td>Rev &#8377;3,668 Cr from &#8377;2,154 Cr, PAT &#8377;666 Cr from &#8377;353 Cr, book &#8377;21,350 Cr</td><td>FY27 revenue guidance &#8377;14,000 Cr is a promise</td></tr>
+<tr><td><span class="tkr">Mishra Dhatu Nigam</span></td><td>Materials lab approval from a global engine maker</td><td>not disclosed</td><td>Qualification, no revenue attached yet</td></tr>
+<tr><td><span class="tkr">Premier Explosives</span></td><td>Sharp fall on both lines</td><td>Rev &#8377;103 Cr from &#8377;142 Cr, PAT &#8377;3 Cr from &#8377;15 Cr</td><td>Opposite of Solar Industries in the same trade</td></tr>
+<tr><td><span class="tkr">DCX Systems</span></td><td>Weak quarter</td><td>not disclosed</td><td>On the weak list despite the defence tailwind</td></tr>
+<tr><td><span class="tkr">Azad Engineering</span></td><td>No filing, cited as a lumpy sector example</td><td>not disclosed</td><td>Flat about two years, then a sharp run</td></tr>
+<tr><td><span class="tkr">Hindustan Aeronautics</span></td><td>Named in the 60 aircraft transport tender</td><td>Tender about &#8377;1 lakh crore</td><td>Selection expected to take over two years</td></tr>
+<tr><td><span class="tkr">Tata Advanced Systems</span></td><td>Paired with a US airframer for the transport tender</td><td>48 of 60 aircraft to be built in India</td><td>Bid stage only</td></tr>
+<tr><td><span class="tkr">Mahindra Defence</span></td><td>Paired with a Brazilian airframer for the same tender</td><td>Over 60% indigenous content required</td><td>Bid stage only</td></tr>
+<tr><td><span class="tkr">Bharat Electronics</span></td><td>New defence unit announced</td><td>&#8377;600 Cr, Chitrakoot</td><td>Announcement, not commissioned</td></tr>
+<tr class="grp"><td colspan="4">Autos and auto components</td></tr>
+<tr><td><span class="tkr">Tata Motors</span> commercial</td><td>Volume and share gains</td><td>Rev &#8377;20,667 Cr up 19%, PAT &#8377;2,560 Cr from &#8377;1,397 Cr, share 36.8%</td><td>Best large cap print of the day</td></tr>
+<tr><td><span class="tkr">Tata Motors</span> passenger</td><td>Margin collapse on flat volume</td><td>EBITDA &#8377;6,176 Cr from &#8377;8,162 Cr, PAT after minority &#8377;775 Cr from &#8377;3,924 Cr</td><td>The clearest cost pass through failure</td></tr>
+<tr><td><span class="tkr">Endurance Technologies</span></td><td>Revenue up, profit up less</td><td>Rev &#8377;4,315 Cr from &#8377;3,319 Cr, PAT &#8377;245 Cr from &#8377;226 Cr</td><td>Growth without operating leverage</td></tr>
+<tr><td><span class="tkr">Minda Corporation</span></td><td>Profit flattered by a one off</td><td>Rev &#8377;1,846 Cr up 33%, PAT &#8377;206 Cr including &#8377;106 Cr exceptional gain</td><td>Underlying growth much smaller than headline</td></tr>
+<tr><td><span class="tkr">Rane Holdings</span></td><td>Revenue up, profit down</td><td>Rev &#8377;1,587 Cr from &#8377;1,341 Cr, PAT after minority &#8377;37 Cr from &#8377;51 Cr</td><td>Input costs absorbed</td></tr>
+<tr><td><span class="tkr">TVS Srichakra</span></td><td>Strong operating recovery</td><td>Rev &#8377;1,068 Cr from &#8377;819 Cr, PAT &#8377;34 Cr from &#8377;13 Cr</td><td>Rubber cost cycle turning helpful</td></tr>
+<tr><td><span class="tkr">Alicon Castalloy</span></td><td>Revenue up strongly, profit up modestly</td><td>Rev &#8377;578 Cr from &#8377;419 Cr, PAT &#8377;11 Cr from &#8377;9 Cr</td><td>Thin margin business</td></tr>
+<tr><td><span class="tkr">Olectra Greentech</span></td><td>Revenue up two thirds, profit flat</td><td>Rev &#8377;576 Cr from &#8377;347 Cr, PAT after minority &#8377;26 Cr, broadly unchanged</td><td>Electric bus growth is not yet profitable growth</td></tr>
+<tr><td><span class="tkr">Sandhar Technologies</span></td><td>Margin dip acknowledged</td><td>not disclosed</td><td>Locking systems and mirrors, stock up about 3x in three years</td></tr>
+<tr><td><span class="tkr">Ather Energy</span></td><td>Production and pre order update</td><td>Q1 production 83K units, pre orders 150K</td><td>Also added to an index review</td></tr>
+<tr><td><span class="tkr">Ola Electric</span></td><td>Two year extension on battery incentive milestones</td><td>Up to &#8377;7,240 Cr, window to 2031</td><td>Relief on a deadline it was going to miss</td></tr>
+<tr><td><span class="tkr">Kia India</span></td><td>Volume growth, long dated target</td><td>191,949 units in seven months up 17%, target 410,000 by 2030</td><td>Target sits below stated capacity</td></tr>
+<tr><td><span class="tkr">Samvardhana Motherson International</span></td><td>Commentary on Chinese carmakers going overseas</td><td>China EV sales 12.9 Mn in 2025, Europe 4.3 Mn</td><td>Follows its customers rather than leads them</td></tr>
+<tr><td><span class="tkr">GNA Axle</span></td><td>Promoter selling</td><td>not disclosed</td><td>Insider direction worth noting</td></tr>
+</tbody></table>
+
+<table class="stk"><tbody>
+<tr class="grp"><td colspan="4">Power, energy and transmission</td></tr>
+<tr><td><span class="tkr">Power Grid Corporation of India</span></td><td>Approved reconductoring of two existing lines</td><td>&#8377;857 Cr, two 400 kV lines in Tamil Nadu</td><td>Roughly doubles capacity without new towers</td></tr>
+<tr><td><span class="tkr">Genus Power Infrastructures</span></td><td>Smart meter rollout showing in the accounts</td><td>Rev &#8377;1,365 Cr from &#8377;942 Cr, PAT after minority &#8377;197 Cr from &#8377;137 Cr</td><td>Direct beneficiary of grid spending</td></tr>
+<tr><td><span class="tkr">GE Power India</span></td><td>Operating profit from almost nothing</td><td>Rev &#8377;309 Cr from &#8377;287 Cr, EBITDA &#8377;45 Cr from &#8377;0.04 Cr</td><td>Turnaround on equipment shortage</td></tr>
+<tr><td><span class="tkr">Skipper</span></td><td>Guided to a very large bid pipeline</td><td>&#8377;90,000 Cr to &#8377;1 lakh crore of bids expected this year</td><td>Pipeline, not orders</td></tr>
+<tr><td><span class="tkr">TD Power Systems</span></td><td>Described a severe equipment shortage</td><td>not disclosed</td><td>Gas turbines, engines, transformers, generators</td></tr>
+<tr><td><span class="tkr">CESC</span></td><td>Steady utility quarter</td><td>Rev &#8377;5,485 Cr from &#8377;5,202 Cr, PAT after minority &#8377;402 Cr from &#8377;390 Cr</td><td>Regulated, so no shortage upside</td></tr>
+<tr><td><span class="tkr">Indraprastha Gas</span></td><td>Margin halved on input cost</td><td>Rev &#8377;5,043 Cr from &#8377;4,327 Cr, EBITDA &#8377;294 Cr from &#8377;511 Cr</td><td>Cannot reprice to households quickly</td></tr>
+<tr><td><span class="tkr">Amara Raja Energy and Mobility</span></td><td>Guided battery storage margins down</td><td>FY27 capex &#8377;1,700 Cr, about &#8377;1,300 Cr new energy, BESS margin 5% to 7%</td><td>Management talking down its own incentive</td></tr>
+<tr><td><span class="tkr">JSW Energy</span></td><td>Signed Bhutan hydro agreement</td><td>920 MW project, 49% stake, &#8377;24.5 Cr initial equity</td><td>First venture outside India</td></tr>
+<tr><td><span class="tkr">Swelect Energy Systems</span></td><td>Revenue and profit both fell</td><td>Rev &#8377;131 Cr from &#8377;177 Cr, PAT after minority &#8377;7 Cr from &#8377;21 Cr</td><td>Solar equipment pricing pressure</td></tr>
+<tr><td><span class="tkr">Fujiyama Power Systems</span></td><td>Growth undone by a fire</td><td>Rev &#8377;1,346 Cr from &#8377;901 Cr, PAT &#8377;58 Cr from &#8377;106 Cr, exceptional loss &#8377;144 Cr</td><td>Operationally fine, accounting hit</td></tr>
+<tr><td><span class="tkr">Baofeng Energy</span></td><td>Record Chinese coal to chemicals profit</td><td>H1 profit 9.73 bn yuan from 5.72 bn yuan</td><td>Benefited from the same crude move</td></tr>
+<tr class="grp"><td colspan="4">Chemicals, pharma and materials</td></tr>
+<tr><td><span class="tkr">Ipca Laboratories</span></td><td>Margin expansion of about six points</td><td>Rev &#8377;2,788 Cr from &#8377;2,309 Cr, PAT &#8377;424 Cr from &#8377;233 Cr</td><td>One of the cleanest large cap prints</td></tr>
+<tr><td><span class="tkr">Galaxy Surfactants</span></td><td>Operating profit doubled on a third more sales</td><td>Rev &#8377;1,782 Cr from &#8377;1,278 Cr, PAT &#8377;166 Cr from &#8377;79 Cr</td><td>Textbook pricing power quarter</td></tr>
+<tr><td><span class="tkr">Manali Petrochemicals</span></td><td>Profit up sharply, partly inventory gains</td><td>Rev &#8377;275 Cr from &#8377;235 Cr, PAT &#8377;64 Cr from &#8377;14 Cr</td><td>Quality of the gain is questionable</td></tr>
+<tr><td><span class="tkr">Sudarshan Chemical Industries</span></td><td>Filed multi year guidance</td><td>FY27 EBITDA &#8377;800 Cr, FY29 &#8377;1,400 to &#8377;1,500 Cr, debt free by FY29</td><td>Quarter itself read as inline</td></tr>
+<tr><td><span class="tkr">Bharat Rasayan</span></td><td>Revenue and profit both down</td><td>Rev &#8377;338 Cr from &#8377;377 Cr, PAT &#8377;37 Cr from &#8377;40 Cr</td><td>Agrochemical pricing still weak</td></tr>
+<tr><td><span class="tkr">Excel Industries</span></td><td>Flat</td><td>Rev &#8377;294 Cr from &#8377;310 Cr, PAT &#8377;29 Cr from &#8377;34 Cr</td><td>No shortage to sell into</td></tr>
+<tr><td><span class="tkr">Supriya Lifescience</span></td><td>Revenue up, profit down</td><td>Rev &#8377;190 Cr from &#8377;145 Cr, PAT &#8377;24 Cr from &#8377;35 Cr</td><td>Margin gave way</td></tr>
+<tr><td><span class="tkr">Sigachi Industries</span></td><td>Recovered from a prior year charge</td><td>Rev &#8377;121 Cr from &#8377;128 Cr, PAT &#8377;8 Cr against a &#8377;101 Cr loss</td><td>Base effect, not growth</td></tr>
+<tr><td><span class="tkr">Lincoln Pharmaceuticals</span></td><td>Steady growth</td><td>Rev &#8377;177 Cr from &#8377;154 Cr, PAT &#8377;36 Cr from &#8377;28 Cr</td><td>Consistent small cap pharma</td></tr>
+<tr><td><span class="tkr">Zota Health Care</span></td><td>Revenue up, deep loss</td><td>Rev &#8377;174 Cr from &#8377;104 Cr, loss &#8377;44 Cr from &#8377;14 Cr</td><td>Growth bought expensively</td></tr>
+<tr><td><span class="tkr">Bliss GVS Pharma</span></td><td>Margin up about 680 basis points</td><td>Second straight quarter above 30% growth</td><td>Regulated market business still ahead</td></tr>
+<tr><td><span class="tkr">Marksans Pharma</span></td><td>Kept guidance well below actual growth</td><td>Q1 growth 35%, FY27 guidance 15% to 20%, about &#8377;1,000 Cr cash</td><td>Management signalling the quarter is not the run rate</td></tr>
+<tr><td><span class="tkr">Gufic Biosciences</span></td><td>Cost under absorption at a new site</td><td>Indore employee cost about &#8377;18 Cr a quarter at roughly 30% use</td><td>Reported margin understates the business</td></tr>
+<tr><td><span class="tkr">Panacea Biotec</span></td><td>Vaccine order flow</td><td>Oral polio orders &#8377;691 Cr from December 2024 to August 2026</td><td>A large incumbent is delisting the product</td></tr>
+<tr><td><span class="tkr">Kopran</span></td><td>Anticoagulant and diabetes molecules approved</td><td>Four molecules supplied domestically</td><td>Export tie ups only after patents lapse</td></tr>
+<tr><td><span class="tkr">Kilitch Drugs (India)</span></td><td>Flat</td><td>Rev &#8377;45 Cr from &#8377;43 Cr, PAT after minority &#8377;2.9 Cr from &#8377;3.0 Cr</td><td>No change</td></tr>
+<tr><td><span class="tkr">Titan Biotech</span></td><td>Solid growth</td><td>Rev &#8377;59 Cr from &#8377;47 Cr, PAT &#8377;11 Cr from &#8377;7 Cr</td><td>Small but consistent</td></tr>
+<tr><td><span class="tkr">SRF</span> and <span class="tkr">Navin Fluorine International</span></td><td>US duties on Chinese refrigerant gas continued</td><td>Order effective 4 August 2026, five more years</td><td>Sourcing window opens, no order announced</td></tr>
+<tr><td><span class="tkr">Tega Industries</span></td><td>Acquisition consolidated with a large one off</td><td>Rev &#8377;1,723 Cr from &#8377;356 Cr, loss after minority &#8377;86 Cr, exceptional about &#8377;200 Cr</td><td>Acquisition of a global grinding media business</td></tr>
+<tr><td><span class="tkr">Lloyds Metals and Energy</span></td><td>Revenue and margin both up sharply</td><td>Revenue about three times, EBITDA margin 37.8% from 33.8%</td><td>Pipeline savings are still to come</td></tr>
+<tr><td><span class="tkr">Maithan Alloys</span></td><td>Profit driven by other income</td><td>Rev &#8377;540 Cr from &#8377;632 Cr, other income &#8377;417 Cr</td><td>Operating business shrank</td></tr>
+<tr><td><span class="tkr">HEG</span></td><td>Demerger order listed for pronouncement</td><td>Director bought 30,000 shares in the market</td><td>The widely quoted &#8377;4 Cr purchase figure does not match the filing</td></tr>
+<tr><td><span class="tkr">Kennametal India</span></td><td>Profit nearly tripled</td><td>Rev &#8377;478 Cr from &#8377;323 Cr, PAT &#8377;89 Cr from &#8377;31 Cr</td><td>Cutting tools into the machining shortage</td></tr>
+<tr><td><span class="tkr">Foseco India</span></td><td>Operating profit roughly doubled</td><td>Rev &#8377;231 Cr from &#8377;157 Cr, PAT after minority &#8377;34 Cr from &#8377;22 Cr</td><td>Foundry chemicals, same trade</td></tr>
+<tr><td><span class="tkr">Modison</span></td><td>Very large operating swing</td><td>Rev &#8377;270 Cr from &#8377;134 Cr, PAT &#8377;34 Cr from &#8377;5 Cr</td><td>Electrical contacts into grid demand</td></tr>
+<tr><td><span class="tkr">Ingersoll-Rand (India)</span></td><td>Steady compounding</td><td>Rev &#8377;379 Cr from &#8377;315 Cr, PAT &#8377;70 Cr from &#8377;59 Cr</td><td>Industrial air, no drama</td></tr>
+<tr><td><span class="tkr">Elgi Equipments</span></td><td>Growth with margin held</td><td>Rev &#8377;1,062 Cr from &#8377;867 Cr, PAT &#8377;103 Cr from &#8377;86 Cr</td><td>Compressors tracking capital spending</td></tr>
+<tr><td><span class="tkr">Technocraft Industries (India)</span></td><td>Drum closures and scaffolding carried it</td><td>Rev &#8377;805 Cr from &#8377;633 Cr, PAT after minority &#8377;134 Cr from &#8377;79 Cr</td><td>Textiles were the drag</td></tr>
+<tr><td><span class="tkr">Rashtriya Chemicals and Fertilizers</span></td><td>Margin improved</td><td>Rev &#8377;3,586 Cr from &#8377;3,371 Cr, PAT &#8377;74 Cr from &#8377;54 Cr</td><td>Also removed from an index review</td></tr>
+<tr><td><span class="tkr">Everest Kanto Cylinder</span></td><td>Both lines down</td><td>Rev &#8377;346 Cr from &#8377;387 Cr, PAT after minority &#8377;30 Cr from &#8377;52 Cr</td><td>Cost squeeze</td></tr>
+<tr><td><span class="tkr">Manorama Industries</span></td><td>Strong specialty fats quarter</td><td>Rev &#8377;404 Cr from &#8377;290 Cr, PAT &#8377;79 Cr from &#8377;47 Cr</td><td>Margin held while scaling</td></tr>
+</tbody></table>
+
+<table class="stk"><tbody>
+<tr class="grp"><td colspan="4">Consumer, retail and services</td></tr>
+<tr><td><span class="tkr">Lenskart Solutions</span></td><td>Record high, margin crossed a threshold</td><td>63 lakh eye tests up 42.7%, product margin above 70% for the first time</td><td>Also added to an index</td></tr>
+<tr><td><span class="tkr">Honasa Consumer</span></td><td>Margin roughly doubled, three growth rates published</td><td>Rev &#8377;756 Cr from &#8377;595 Cr, EBITDA margin 14.58% from 7.70%</td><td>The Derma Co crossed &#8377;1,000 Cr annualised</td></tr>
+<tr><td><span class="tkr">Jubilant FoodWorks</span></td><td>Modest growth</td><td>Rev &#8377;2,570 Cr from &#8377;2,252 Cr, PAT after minority &#8377;97 Cr from &#8377;92 Cr</td><td>Volume without leverage</td></tr>
+<tr><td><span class="tkr">Page Industries</span></td><td>Sales up, profit down</td><td>Rev &#8377;1,420 Cr from &#8377;1,317 Cr, PAT &#8377;193 Cr from &#8377;201 Cr</td><td>Cost pass through failing</td></tr>
+<tr><td><span class="tkr">Relaxo Footwears</span></td><td>Small improvement</td><td>Rev &#8377;705 Cr from &#8377;654 Cr, PAT &#8377;55 Cr from &#8377;49 Cr</td><td>Still subdued</td></tr>
+<tr><td><span class="tkr">V2 Retail</span></td><td>Strong store led growth</td><td>Rev &#8377;997 Cr from &#8377;632 Cr, PAT &#8377;42 Cr from &#8377;25 Cr, 381 stores</td><td>Value retail working</td></tr>
+<tr><td><span class="tkr">Baazar Style Retail</span></td><td>Sales up, profit barely moved</td><td>Rev &#8377;486 Cr from &#8377;377 Cr, PAT &#8377;2.2 Cr from &#8377;2.1 Cr</td><td>Growth is not reaching the bottom line</td></tr>
+<tr><td><span class="tkr">Brainbees Solutions</span></td><td>Loss narrowed</td><td>Rev &#8377;2,106 Cr from &#8377;1,863 Cr, loss &#8377;44 Cr from &#8377;67 Cr</td><td>Improving, not yet profitable</td></tr>
+<tr><td><span class="tkr">Travel Food Services</span></td><td>Profit aided by a tax write back</td><td>Sales &#8377;452 Cr up 20.6%, PAT &#8377;129 Cr up 35.6%, margin down 308 bps</td><td>21 airports, 580 outlets</td></tr>
+<tr><td><span class="tkr">Awfis Space Solutions</span></td><td>Net debt free with high returns</td><td>Rev &#8377;425 Cr from &#8377;335 Cr, PAT &#8377;24 Cr from &#8377;10 Cr</td><td>Office demand holding</td></tr>
+<tr><td><span class="tkr">Juniper Hotels</span></td><td>Profit nearly quadrupled</td><td>Rev &#8377;250 Cr from &#8377;221 Cr, PAT after minority &#8377;33 Cr from &#8377;9 Cr</td><td>Operating leverage in hospitality</td></tr>
+<tr><td><span class="tkr">Max Healthcare Institute</span></td><td>Steady</td><td>Rev &#8377;2,366 Cr from &#8377;2,028 Cr, PAT &#8377;322 Cr from &#8377;308 Cr</td><td>Growth without margin gain</td></tr>
+<tr><td><span class="tkr">Apollo Hospitals</span></td><td>Operational beat driven by revenue</td><td>not disclosed</td><td>On the strong list</td></tr>
+<tr><td><span class="tkr">Welspun Living</span></td><td>Profit up more than 80%</td><td>Rev &#8377;2,795 Cr from &#8377;2,261 Cr, PAT &#8377;163 Cr from &#8377;89 Cr</td><td>Home textiles recovering</td></tr>
+<tr><td><span class="tkr">Gokaldas Exports</span></td><td>Volume growth, thin profit growth</td><td>Total income &#8377;1,180 Cr up 21%, PAT &#8377;44 Cr up 7%</td><td>Africa volumes up 45%</td></tr>
+<tr><td><span class="tkr">KRBL</span></td><td>Sales down, profit up sharply</td><td>Rev &#8377;1,496 Cr from &#8377;1,584 Cr, PAT &#8377;261 Cr from &#8377;151 Cr</td><td>Rice inventory timing</td></tr>
+<tr><td><span class="tkr">Avanti Feeds</span></td><td>Margin halved</td><td>Rev &#8377;1,900 Cr from &#8377;1,606 Cr, EBITDA &#8377;106 Cr from &#8377;214 Cr</td><td>Cannot pass on feed input costs</td></tr>
+<tr><td><span class="tkr">Kaveri Seed Company</span></td><td>Both lines down</td><td>Rev &#8377;743 Cr from &#8377;859 Cr, PAT after minority &#8377;280 Cr from &#8377;326 Cr</td><td>Season timing</td></tr>
+<tr><td><span class="tkr">Bajaj Hindusthan Sugar</span></td><td>Losses widened materially</td><td>Rev &#8377;1,126 Cr from &#8377;1,248 Cr, EBITDA loss &#8377;120 Cr from &#8377;27 Cr</td><td>Worst of the cost squeeze group</td></tr>
+<tr><td><span class="tkr">Apex Frozen Foods</span></td><td>Flat sales, profit doubled</td><td>Rev &#8377;257 Cr from &#8377;258 Cr, PAT &#8377;22 Cr from &#8377;9 Cr</td><td>Mix improvement</td></tr>
+<tr><td><span class="tkr">Vadilal Industries</span></td><td>Called a turnaround quarter</td><td>not disclosed</td><td>On the strong list</td></tr>
+<tr><td><span class="tkr">India Glycols</span>, <span class="tkr">Gujarat State Fertilizers and Chemicals</span></td><td>Both on the strong list</td><td>not disclosed</td><td>Chemicals breadth</td></tr>
+<tr><td><span class="tkr">VIP Industries</span>, <span class="tkr">IRCTC</span>, <span class="tkr">Sun TV Network</span></td><td>Weak or inline</td><td>not disclosed</td><td>Consumer discretionary lagging</td></tr>
+<tr class="grp"><td colspan="4">Financials and deals</td></tr>
+<tr><td><span class="tkr">Jio Credit</span> and <span class="tkr">Bank of America</span></td><td>Foreign bank taking up to half the lender</td><td>Up to &#8377;18,268 Cr, &#8377;6,613 Cr upfront for 26.5%, loan book &#8377;30,667 Cr</td><td>Subject to regulatory approval</td></tr>
+<tr><td><span class="tkr">Arman Financial Services</span></td><td>Swung from loss to profit</td><td>AUM &#8377;2,925 Cr up 35.7%, PAT &#8377;45 Cr against a &#8377;15 Cr loss</td><td>Management still not calling the sector normal</td></tr>
+<tr><td><span class="tkr">Sammaan Capital</span></td><td>Revenue and profit both lower</td><td>Total revenue &#8377;1,652 Cr from &#8377;2,400 Cr, PAT &#8377;243 Cr from &#8377;334 Cr</td><td>Following a very large prior charge</td></tr>
+<tr><td><span class="tkr">Max Financial Services</span></td><td>Two different revenue bases published</td><td>New business value &#8377;446 Cr up 33%, margin quoted as both 23.2% and 33%</td><td>Check which margin definition is being used</td></tr>
+<tr><td><span class="tkr">General Insurance Corporation of India</span></td><td>Profit fell</td><td>PAT &#8377;1,744 Cr from &#8377;2,531 Cr</td><td>Reinsurance pricing</td></tr>
+<tr><td><span class="tkr">Centrum Capital</span></td><td>Loss widened sharply</td><td>Total revenue &#8377;912 Cr from &#8377;846 Cr, loss after minority &#8377;92 Cr from &#8377;14 Cr</td><td>Cost base outrunning revenue</td></tr>
+<tr><td><span class="tkr">Shalimar Paints</span> and Infra Market</td><td>Reverse merger route to listing</td><td>New shares and convertibles about &#8377;10,500 Cr, plus &#8377;1,000 Cr placement</td><td>Against quarterly revenue of &#8377;138 Cr and a loss</td></tr>
+<tr><td><span class="tkr">GMR Airports</span></td><td>Fundraising approved</td><td>Up to &#8377;5,000 Cr</td><td>Approval, not raised</td></tr>
+<tr><td><span class="tkr">Ixigo</span></td><td>Partial exit from a bus startup</td><td>17.4% sold for &#8377;37 Cr at 3.4x in four years</td><td>Retains 8.27%</td></tr>
+<tr><td><span class="tkr">Finkurve Financial Services</span></td><td>Revenue nearly doubled</td><td>Total revenue &#8377;75 Cr from &#8377;40 Cr, PAT &#8377;8 Cr from &#8377;5 Cr</td><td>Small gold loan lender</td></tr>
+<tr><td><span class="tkr">One Point One Solutions</span></td><td>Revenue and profit both up strongly</td><td>Revenue &#8377;158 Cr up 129.4%, PAT &#8377;16 Cr up 72.8%</td><td>Acquisition fully integrated</td></tr>
+<tr><td><span class="tkr">Databricks</span></td><td>Round closed</td><td>$5 bn at a $190 bn valuation</td><td>Private, closed rather than announced</td></tr>
+<tr class="grp"><td colspan="4">Technology, artificial intelligence and global</td></tr>
+<tr><td><span class="tkr">Larsen and Toubro</span></td><td>Large computing cluster order and a magnet bid</td><td>Order &#8377;10,000 to &#8377;15,000 Cr, 10,000 accelerators in Chennai, magnet scheme &#8377;7,280 Cr</td><td>Counterparty named differently in two places</td></tr>
+<tr><td><span class="tkr">Nvidia</span></td><td>Hardware behind the Chennai cluster</td><td>10,000 units of its current generation part</td><td>Also gained a new cloud partner</td></tr>
+<tr><td><span class="tkr">SpaceX</span></td><td>Surged after first lockup expiry</td><td>Up about 35% in five sessions, roughly $500 bn of value added</td><td>Now valued substantially as a computing business</td></tr>
+<tr><td><span class="tkr">Cisco Systems</span></td><td>Beat and guided above expectations</td><td>Q4 revenue $17.1 bn up 12%, FY27 guidance $73.5 to $74.5 bn</td><td>Networking into the same build out</td></tr>
+<tr><td><span class="tkr">Black Box</span></td><td>Backlog up more than 80%</td><td>Rev &#8377;1,719 Cr up 24%, backlog $950 Mn, one $131 Mn contract</td><td>Converts over 24 to 36 months</td></tr>
+<tr><td><span class="tkr">Amagi Media Labs</span></td><td>Turned profitable but fell sequentially</td><td>Rev &#8377;437 Cr from &#8377;330 Cr, PAT &#8377;34 Cr from &#8377;4 Cr</td><td>Added to an index review</td></tr>
+<tr><td><span class="tkr">Aditya Infotech</span></td><td>Very large profit growth, two guidance versions</td><td>Rev &#8377;1,402 Cr up 90%, PAT &#8377;142 Cr up 333%, guidance &#8377;6,000 to &#8377;6,500 or &#8377;6,800 Cr</td><td>Stock fell 5% on the day</td></tr>
+<tr><td><span class="tkr">Orient Technologies</span></td><td>Sharp sequential margin recovery</td><td>Rev &#8377;202 Cr up 9.7% sequentially, order book &#8377;375 Cr</td><td>Small system integrator</td></tr>
+<tr><td><span class="tkr">Dynacons Systems and Solutions</span></td><td>Flat revenue, better margin</td><td>Rev &#8377;314 Cr from &#8377;329 Cr, PAT after minority &#8377;20 Cr, broadly flat</td><td>No change</td></tr>
+<tr><td><span class="tkr">Nebius</span></td><td>Contract value quadrupled</td><td>Annual run rate revenue $582 Mn up 454%</td><td>Stated average deal size sits oddly against that</td></tr>
+<tr><td><span class="tkr">CXMT</span></td><td>Became China's most valuable listed company</td><td>not disclosed</td><td>Memory, the leveraged trade in Section 7</td></tr>
+<tr><td><span class="tkr">BYD</span></td><td>Model launch and Indonesian volumes</td><td>Qin cumulative 2.9 Mn units, Indonesia July 6,569 units, third place</td><td>Local content target 60% by 2027</td></tr>
+<tr><td><span class="tkr">Cloudflare</span></td><td>Will block general crawlers by default</td><td>From mid September unless owners opt out</td><td>Non human traffic has passed human traffic</td></tr>
+<tr><td><span class="tkr">Harmonic</span></td><td>Strong quarter with rising concentration</td><td>Broadband revenue $133.5 Mn up 54%, top two customers 63% of revenue from 58%</td><td>Growth and concentration together</td></tr>
+</tbody></table>
+</div>
+
+
+<div class="digest-footer">
+<div class="foot-brand">
+<img src="data:image/png;base64,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" alt="Normal Guy">
+<div><div style="font-size:11px;font-weight:700;color:var(--text);text-transform:uppercase;letter-spacing:.5px;line-height:1.3">Normal Guy</div><div style="font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px">Intelligence Digest — August 13-14, 2026</div></div>
+</div>
+<p style="color:var(--text);font-size:13.4px;margin:0"><b>Please read this before you use anything above.</b> This is a daily educational newsletter written for one small group of readers, nothing more. It is not research sold to anybody, it is not a service and it is not a product. <b>Nothing here is a recommendation to buy, sell or hold anything</b>, and where something is labelled bullish, bearish or mixed that describes the mood of the material that was read rather than a view on the company or advice to you. Please keep it private and do not forward, post, publish or quote it outside the group. It is generated with the help of AI, so numbers can be misread and an original source can simply be wrong. <b>If anything looks out of place, check it yourself before acting on it</b>, and speak to a registered adviser before making any financial decision.</p>
+</div>
+
+</div><!-- end .main -->
+
+<script>
+(function(){
+var t=document.getElementById('themeBtn'),r=document.documentElement;
+function set(m){r.setAttribute('data-theme',m);t.textContent=m==='dark'?'☀️':'🌙';try{localStorage.setItem('digest-theme',m)}catch(e){}}
+t.addEventListener('click',function(){set(r.getAttribute('data-theme')==='dark'?'light':'dark')});
+try{var s=localStorage.getItem('digest-theme');if(s)set(s)}catch(e){}
+})();
+</script>
+</body>
+</html>
